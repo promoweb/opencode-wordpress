@@ -11,11 +11,11 @@
     "ai",
     "development"
   ],
-  "author": "Your Name",
+  "author": "Emilio Petrozzi",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/opencode-wordpress.git"
+    "url": "https://github.com/promoweb/opencode-wordpress.git"
   },
   "scripts": {
     "install": "./install.sh",

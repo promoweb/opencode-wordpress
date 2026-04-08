@@ -43,7 +43,7 @@ Use the automated installation script:
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/opencode-wordpress.git
+git clone https://github.com/promoweb/opencode-wordpress.git
 
 # Navigate to repository
 cd opencode-wordpress
@@ -66,7 +66,7 @@ Step-by-step manual installation:
 #### Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/opencode-wordpress.git
+git clone https://github.com/promoweb/opencode-wordpress.git
 cd opencode-wordpress
 ```
 

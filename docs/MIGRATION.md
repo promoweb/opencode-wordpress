@@ -42,7 +42,7 @@ Migrate from manual coding to OpenCode WordPress.
 1. **Install OpenCode WordPress**
 
 ```bash
-git clone https://github.com/yourusername/opencode-wordpress.git
+git clone https://github.com/promoweb/opencode-wordpress.git
 cd opencode-wordpress
 ./install.sh
 ```
@@ -210,11 +210,11 @@ Migrate entire team to OpenCode WordPress.
 
 ```bash
 # Clone OpenCode WordPress
-git clone https://github.com/yourusername/opencode-wordpress.git
+git clone https://github.com/promoweb/opencode-wordpress.git
 
 # Add to team's tooling repository
 cd team-tools
-git submodule add https://github.com/yourusername/opencode-wordpress.git
+git submodule add https://github.com/promoweb/opencode-wordpress.git
 ```
 
 2. **Create Team Installation Script**
