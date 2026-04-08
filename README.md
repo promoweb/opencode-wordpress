@@ -163,6 +163,10 @@ Contributions welcome! Please read the contributing guidelines.
 
 MIT License
 
+## Author
+
+**Emilio Petrozzi** - [https://www.mrtux.it](https://www.mrtux.it)
+
 ## Credits
 
 Inspired by and adapted from [everything-claude-code](https://github.com/affaan-m/everything-claude-code) for WordPress-specific development.
