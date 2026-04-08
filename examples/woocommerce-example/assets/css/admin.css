@@ -1,0 +1,149 @@
+/**
+ * OpenCode WooCommerce Extension - Admin Styles
+ *
+ * @package Opencode_WC_Extension
+ */
+
+/* Product Type Badge */
+.opencode-product-type-badge {
+    display: inline-block;
+    background: #96588a;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    margin-left: 5px;
+}
+
+/* Settings Page */
+.opencode-wc-settings-header {
+    background: linear-gradient(135deg, #96588a 0%, #7a3f6d 100%);
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.opencode-wc-settings-header h2 {
+    margin: 0;
+    color: #fff;
+}
+
+.opencode-wc-settings-header p {
+    margin: 5px 0 0;
+    opacity: 0.9;
+}
+
+/* Product Data Panel */
+.opencode_product_data_panel {
+    padding: 10px;
+}
+
+.opencode_product_data_panel .form-field {
+    margin-bottom: 15px;
+}
+
+.opencode_product_data_panel label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.opencode_product_data_panel input[type="text"],
+.opencode_product_data_panel input[type="number"],
+.opencode_product_data_panel select {
+    width: 100%;
+    max-width: 300px;
+}
+
+.opencode_product_data_panel .description {
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Order Meta Box */
+#opencode_order_meta {
+    padding: 10px;
+}
+
+#opencode_order_meta .opencode-meta-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#opencode_order_meta .opencode-meta-row:last-child {
+    border-bottom: none;
+}
+
+#opencode_order_meta .opencode-meta-label {
+    font-weight: 600;
+}
+
+#opencode_order_meta .opencode-meta-value {
+    color: #666;
+}
+
+/* Gateway Settings */
+.opencode-gateway-settings {
+    max-width: 600px;
+}
+
+.opencode-gateway-settings .form-table th {
+    width: 200px;
+}
+
+.opencode-gateway-test-mode-notice {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.opencode-gateway-test-mode-notice strong {
+    color: #856404;
+}
+
+/* Dashboard Widget */
+#opencode_wc_dashboard_widget .inside {
+    padding: 10px;
+}
+
+#opencode_wc_dashboard_widget .opencode-stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+#opencode_wc_dashboard_widget .opencode-stat-label {
+    color: #666;
+}
+
+#opencode_wc_dashboard_widget .opencode-stat-value {
+    font-weight: 600;
+}
+
+/* Admin List Table */
+.column-opencode_product_type {
+    width: 100px;
+}
+
+.column-opencode_custom_field {
+    width: 120px;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .opencode_product_data_panel input[type="text"],
+    .opencode_product_data_panel input[type="number"],
+    .opencode_product_data_panel select {
+        max-width: 100%;
+    }
+
+    .opencode-gateway-settings .form-table th {
+        width: auto;
+    }
+}

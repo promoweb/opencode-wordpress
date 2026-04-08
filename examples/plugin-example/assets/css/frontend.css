@@ -1,0 +1,173 @@
+/**
+ * OpenCode Plugin Example - Frontend Styles
+ *
+ * @package Opencode_Plugin_Example
+ */
+
+/* Container Styles */
+.opencode-plugin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Grid Layout */
+.opencode-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Single Item Card */
+.opencode-item-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.opencode-item-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.opencode-item-title {
+    margin: 0 0 10px 0;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.opencode-item-title a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.opencode-item-title a:hover {
+    color: #005177;
+}
+
+.opencode-item-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.opencode-item-meta {
+    font-size: 0.85em;
+    color: #888;
+    display: flex;
+    gap: 15px;
+}
+
+.opencode-item-category {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+/* List Layout */
+.opencode-items-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.opencode-items-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.opencode-items-list li:last-child {
+    border-bottom: none;
+}
+
+/* Archive Header */
+.opencode-archive-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+.opencode-archive-title {
+    font-size: 2em;
+    margin: 0;
+}
+
+.opencode-archive-description {
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Pagination */
+.opencode-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.opencode-pagination a,
+.opencode-pagination span {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.opencode-pagination .current {
+    background: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
+}
+
+/* Single Item View */
+.opencode-single-item {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.opencode-single-header {
+    margin-bottom: 30px;
+}
+
+.opencode-single-title {
+    font-size: 2.5em;
+    margin: 0 0 15px 0;
+}
+
+.opencode-single-meta {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.opencode-single-content {
+    line-height: 1.8;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .opencode-items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .opencode-item-card {
+        padding: 15px;
+    }
+
+    .opencode-single-title {
+        font-size: 1.8em;
+    }
+}
+
+/* Minimal Display Mode */
+.opencode-minimal .opencode-item-card {
+    border: none;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.opencode-minimal .opencode-item-card:hover {
+    box-shadow: none;
+}

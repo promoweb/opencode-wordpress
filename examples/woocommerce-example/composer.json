@@ -1,0 +1,41 @@
+{
+    "name": "opencode/wc-extension",
+    "description": "WooCommerce extension demonstrating best practices for WooCommerce development including custom product types, payment gateways, and order handling.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "OpenCode",
+            "email": "opencode@example.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "woocommerce/woocommerce": "^6.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.7",
+        "wp-coding-standards/wpcs": "^3.0",
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OpenCode_WC_Extension\\": "includes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OpenCode_WC_Extension\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "lint": "phpcs --standard=WordPress",
+        "lint-fix": "phpcbf --standard=WordPress"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

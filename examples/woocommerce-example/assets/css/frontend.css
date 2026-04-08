@@ -1,0 +1,133 @@
+/**
+ * OpenCode WooCommerce Extension - Frontend Styles
+ *
+ * @package Opencode_WC_Extension
+ */
+
+/* Custom Product Display */
+.opencode-custom-product {
+    border: 2px solid #96588a;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.opencode-custom-product .product-title {
+    color: #96588a;
+}
+
+/* Product Badge */
+.opencode-product-badge {
+    display: inline-block;
+    background: #96588a;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* Single Product Page */
+.single-product .opencode-custom-product-info {
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.single-product .opencode-custom-product-info h3 {
+    margin: 0 0 10px;
+    color: #96588a;
+}
+
+/* Checkout Gateway */
+#wc-opencode_custom_gateway-form {
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+#wc-opencode_custom_gateway-form p {
+    margin-bottom: 10px;
+}
+
+/* Gateway Thank You Page */
+.opencode-wc-thankyou {
+    background: linear-gradient(135deg, #96588a 0%, #7a3f6d 100%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.opencode-wc-thankyou h2 {
+    color: #fff;
+    margin: 0 0 10px;
+}
+
+.opencode-wc-thankyou p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Order Received */
+.opencode-order-received {
+    text-align: center;
+    padding: 30px;
+}
+
+.opencode-order-received .opencode-icon {
+    font-size: 48px;
+    color: #96588a;
+    margin-bottom: 15px;
+}
+
+/* Product Archive */
+.archive .opencode-custom-product-item {
+    position: relative;
+}
+
+.archive .opencode-custom-product-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #96588a;
+    border-radius: 4px 0 0 4px;
+}
+
+/* Cart Item */
+.cart_item .opencode-custom-item-note {
+    font-size: 12px;
+    color: #888;
+    display: block;
+    margin-top: 5px;
+}
+
+/* My Account */
+.opencode-wc-my-account-section {
+    margin-bottom: 30px;
+}
+
+.opencode-wc-my-account-section h3 {
+    color: #96588a;
+    border-bottom: 2px solid #96588a;
+    padding-bottom: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .opencode-custom-product {
+        padding: 15px;
+    }
+
+    .opencode-wc-thankyou {
+        padding: 15px;
+    }
+
+    .opencode-order-received {
+        padding: 20px;
+    }
+}

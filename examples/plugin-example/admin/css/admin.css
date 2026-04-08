@@ -1,0 +1,141 @@
+.opencode-plugin-admin-wrap {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.opencode-plugin-admin-wrap h1 {
+    color: #23282d;
+    margin-bottom: 20px;
+}
+
+.opencode-plugin-admin-wrap .nav-tab-wrapper {
+    margin-bottom: 20px;
+}
+
+.opencode-plugin-admin-wrap .nav-tab {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 6px 12px;
+}
+
+.opencode-plugin-admin-wrap .nav-tab-active {
+    background-color: #fff;
+    border-bottom-color: #fff;
+}
+
+.opencode-plugin-admin-wrap .tab-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.opencode-item-count {
+    display: block;
+    padding: 5px 0;
+}
+
+.opencode-item-count::before {
+    content: "\f111";
+    font-family: dashicons;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.opencode-notice {
+    background-color: #fff;
+    border-left: 4px solid #00a0d2;
+    padding: 12px;
+    margin: 5px 0 15px;
+}
+
+.opencode-notice.success {
+    border-left-color: #46b450;
+}
+
+.opencode-notice.error {
+    border-left-color: #dc3232;
+}
+
+.opencode-notice.warning {
+    border-left-color: #ffb900;
+}
+
+.opencode-status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.opencode-status-indicator.active {
+    background-color: #46b450;
+}
+
+.opencode-status-indicator.inactive {
+    background-color: #dc3232;
+}
+
+.opencode-admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.opencode-admin-table th,
+.opencode-admin-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.opencode-admin-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.opencode-admin-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.opencode-admin-form-field {
+    margin-bottom: 15px;
+}
+
+.opencode-admin-form-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.opencode-admin-form-field input[type="text"],
+.opencode-admin-form-field input[type="email"],
+.opencode-admin-form-field input[type="number"],
+.opencode-admin-form-field select,
+.opencode-admin-form-field textarea {
+    width: 100%;
+    max-width: 400px;
+}
+
+.opencode-admin-form-field .description {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-style: italic;
+}
+
+@media screen and (max-width: 782px) {
+    .opencode-plugin-admin-wrap {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .opencode-admin-form-field input[type="text"],
+    .opencode-admin-form-field input[type="email"],
+    .opencode-admin-form-field input[type="number"],
+    .opencode-admin-form-field select,
+    .opencode-admin-form-field textarea {
+        max-width: 100%;
+    }
+}

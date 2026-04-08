@@ -1,0 +1,27 @@
+{
+  "name": "opencode-wordpress",
+  "version": "1.0.0",
+  "description": "OpenCode skills, agents, rules, and commands for WordPress development (themes, plugins, WooCommerce)",
+  "keywords": [
+    "opencode",
+    "wordpress",
+    "woocommerce",
+    "skills",
+    "agents",
+    "ai",
+    "development"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/opencode-wordpress.git"
+  },
+  "scripts": {
+    "install": "./install.sh",
+    "lint": "echo 'No linting configured yet'",
+    "test": "echo 'No tests configured yet'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
