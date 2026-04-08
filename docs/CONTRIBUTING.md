@@ -781,7 +781,7 @@ Include:
 
 ## Questions?
 
-- **GitHub Discussions**: https://github.com/yourusername/opencode-wordpress/discussions
+- **GitHub Discussions**: https://github.com/promoweb/opencode-wordpress/discussions
 - **GitHub Issues**: For bug reports and feature requests
 - **Email**: contribute@example.com
 

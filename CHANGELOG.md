@@ -418,7 +418,7 @@ rm -rf ~/.config/opencode/agents/wordpress-*
 
 2. Install new version
 ```bash
-git clone https://github.com/yourusername/opencode-wordpress.git
+git clone https://github.com/promoweb/opencode-wordpress.git
 cd opencode-wordpress
 ./install.sh
 ```
@@ -560,9 +560,9 @@ GPL v2 or later. See [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-- **GitHub**: https://github.com/yourusername/opencode-wordpress
-- **Issues**: https://github.com/yourusername/opencode-wordpress/issues
-- **Discussions**: https://github.com/yourusername/opencode-wordpress/discussions
+- **GitHub**: https://github.com/promoweb/opencode-wordpress
+- **Issues**: https://github.com/promoweb/opencode-wordpress/issues
+- **Discussions**: https://github.com/promoweb/opencode-wordpress/discussions
 - **Email**: contact@example.com
 
 ---

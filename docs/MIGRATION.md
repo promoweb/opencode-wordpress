@@ -724,8 +724,8 @@ Don't migrate everything at once:
 ## Support
 
 For migration issues:
-- **GitHub Issues**: https://github.com/yourusername/opencode-wordpress/issues
-- **Migration Discussions**: https://github.com/yourusername/opencode-wordpress/discussions/categories/migration
+- **GitHub Issues**: https://github.com/promoweb/opencode-wordpress/issues
+- **Migration Discussions**: https://github.com/promoweb/opencode-wordpress/discussions/categories/migration
 - **Documentation**: [docs/](.) folder
 
 ## License

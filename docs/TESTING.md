@@ -998,8 +998,8 @@ Document test requirements:
 ## Support
 
 For testing questions:
-- **GitHub Issues**: https://github.com/yourusername/opencode-wordpress/issues
-- **Testing Discussions**: https://github.com/yourusername/opencode-wordpress/discussions/categories/testing
+- **GitHub Issues**: https://github.com/promoweb/opencode-wordpress/issues
+- **Testing Discussions**: https://github.com/promoweb/opencode-wordpress/discussions/categories/testing
 
 ## License
 

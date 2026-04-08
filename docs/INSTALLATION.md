@@ -574,7 +574,7 @@ After installation:
 
 For installation issues:
 
-- **GitHub Issues**: https://github.com/yourusername/opencode-wordpress/issues
+- **GitHub Issues**: https://github.com/promoweb/opencode-wordpress/issues
 - **Documentation**: [docs/](../docs/)
 - **Community**: Join discussions on GitHub
 

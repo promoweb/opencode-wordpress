@@ -837,8 +837,8 @@ cp -r examples/woocommerce-example wp-content/plugins/my-wc-ext
 ## Support
 
 For usage questions:
-- **GitHub Issues**: https://github.com/yourusername/opencode-wordpress/issues
-- **Discussions**: https://github.com/yourusername/opencode-wordpress/discussions
+- **GitHub Issues**: https://github.com/promoweb/opencode-wordpress/issues
+- **Discussions**: https://github.com/promoweb/opencode-wordpress/discussions
 - **Documentation**: All docs in [docs/](.) folder
 
 ## License
