@@ -2,6 +2,12 @@
 
 OpenCode skills, agents, rules, and commands for professional WordPress development (themes, plugins, WooCommerce).
 
+## About
+
+A comprehensive toolkit for WordPress developers using OpenCode. This repository provides specialized skills, agents, rules, and commands designed to streamline WordPress development workflows. Whether you're building themes, plugins, or WooCommerce extensions, this toolkit helps you write cleaner, more secure, and more maintainable code following WordPress coding standards and best practices.
+
+**Author**: Emilio Petrozzi - [mrtux.it](https://www.mrtux.it)
+
 ## Overview
 
 This repository provides a comprehensive OpenCode configuration for WordPress development:
@@ -162,10 +168,6 @@ Contributions welcome! Please read the contributing guidelines.
 ## License
 
 MIT License
-
-## Author
-
-**Emilio Petrozzi** - [https://www.mrtux.it](https://www.mrtux.it)
 
 ## Credits
 
