@@ -1,15 +1,41 @@
-# Opencode Theme Example
+# OpenCode Theme Example
 
-A modern, accessible WordPress theme demonstrating best practices for theme development.
+A modern, accessible, responsive WordPress blog theme demonstrating best practices for WordPress theme development.
+
+## Description
+
+OpenCode Theme Example is a production-ready WordPress theme built following all WordPress Theme Developer Handbook guidelines. It features responsive design, accessibility compliance, customizer support, Gutenberg compatibility, and performance optimization.
 
 ## Features
 
-- **Responsive Design**: Mobile-first approach with CSS Grid and Flexbox
-- **Accessibility Ready**: WCAG 2.0 compliant with proper ARIA labels and keyboard navigation
-- **Customizer Support**: Custom logo, menus, and widgets
-- **Developer Friendly**: Clean code, well-documented, following WordPress coding standards
-- **Gutenberg Compatible**: Full support for the block editor
-- **Performance Optimized**: Minimal dependencies, optimized CSS/JS
+### 🎨 Design & Layout
+- **Responsive Design**: Mobile-first approach with fluid layouts
+- **CSS Grid & Flexbox**: Modern layout techniques
+- **Customizable Colors**: Primary, accent, and link colors via Customizer
+- **Sidebar Position**: Left, right, or no sidebar options
+- **Footer Widgets**: Up to 3 footer widget areas
+- **Custom Logo Support**: Upload your logo via Customizer
+
+### ⚡ Performance
+- **Native Lazy Loading**: WordPress 5.5+ lazy loading support
+- **Preload Critical Assets**: Faster initial page load
+- **Optimized Assets**: Minified CSS/JS with proper versioning
+- **Disabled Emoji Scripts**: Reduces unnecessary HTTP requests
+- **Limited Post Revisions**: Prevents database bloat
+
+### ♿ Accessibility
+- **Skip to Content Link**: Keyboard navigation support
+- **Proper Heading Hierarchy**: SEO and screen reader friendly
+- **ARIA Labels**: Enhanced screen reader support
+- **Focus Styles**: Visible focus indicators
+- **Color Contrast**: WCAG 2.1 AA compliant
+
+### 🎯 WordPress Standards
+- **Template Hierarchy**: Proper use of WordPress template hierarchy
+- **Template Parts**: Modular, reusable template components
+- **Theme Supports**: All recommended theme supports enabled
+- **Customizer API**: Live preview with postMessage transport
+- **Translation Ready**: Full i18n support with text domain
 
 ## Theme Structure
 
@@ -17,236 +43,187 @@ A modern, accessible WordPress theme demonstrating best practices for theme deve
 opencode-theme-example/
 ├── assets/
 │   ├── css/
-│   │   └── style.css          # Main stylesheet
+│   │   ├── style.css           # Main styles
+│   │   ├── responsive.css      # Responsive enhancements
+│   │   └── editor-style.css    # Gutenberg editor styles
 │   └── js/
-│       └── main.js             # Theme JavaScript
-├── inc/                        # Include files
-│   ├── template-tags.php       # Custom template functions
-│   └── template-functions.php   # Custom functionality
-├── template-parts/             # Template partials
+│       ├── main.js             # Main JavaScript
+│       └── customizer-preview.js
+├── inc/
+│   ├── customizer.php          # Customizer settings
+│   ├── template-functions.php  # Custom functions
+│   └── template-tags.php       # Template tags
+├── languages/                  # Translation files
+├── template-parts/
 │   ├── content.php             # Post content
 │   ├── content-page.php        # Page content
-│   └── content-none.php        # No posts found
-├── 404.php                     # 404 error template
-├── footer.php                  # Footer template
-├── functions.php               # Theme setup and functions
-├── header.php                  # Header template
-├── index.php                   # Main template
-├── page.php                    # Single page template
-├── sidebar.php                 # Sidebar template
-├── single.php                  # Single post template
-└── style.css                   # Theme metadata
+│   ├── content-none.php        # No content found
+│   └── content-search.php      # Search results
+├── 404.php
+├── archive.php
+├── author.php
+├── footer.php
+├── functions.php
+├── header.php
+├── index.php
+├── page.php
+├── search.php
+├── sidebar.php
+├── single.php
+├── singular.php
+├── style.css                  # Theme metadata
+└── screenshot.png             # Theme preview (1200x900)
 ```
 
 ## Installation
 
-1. Upload the theme folder to `/wp-content/themes/`
-2. Activate the theme in WordPress Dashboard → Appearance → Themes
-3. Configure theme settings via Appearance → Customize
+### Requirements
+- WordPress 5.8 or higher
+- PHP 7.4 or higher
+- MySQL 5.7 or higher
+
+### Installation Methods
+
+#### From WordPress Dashboard
+1. Go to **Appearance > Themes > Add New**
+2. Click **Upload Theme**
+3. Choose the theme zip file
+4. Click **Install Now**
+5. Activate the theme
+
+#### Manual Installation
+1. Download the theme
+2. Extract to `/wp-content/themes/opencode-theme-example/`
+3. Activate via **Appearance > Themes**
 
 ## Customization
 
-### Theme Supports
+### Customizer Options
 
-The theme includes support for:
+Navigate to **Appearance > Customize** to access:
 
-- `title-tag`: Document title management
-- `post-thumbnails`: Featured images
-- `custom-logo`: Custom logo upload
-- `html5`: HTML5 markup for forms, comments, galleries
-- `wp-block-styles`: Core block styles
-- `align-wide`: Wide and full alignment for blocks
-- `editor-styles`: Editor stylesheet
+#### Theme Options
+- **Sidebar Position**: Left, Right, or None
+- **Home Posts Per Page**: Number of posts on homepage
+- **Archive Posts Per Page**: Number of posts on archive pages
+- **Excerpt Length**: Word count for excerpts
+- **Show Author Info**: Display author information on posts
+- **Show Post Date**: Display publication dates
+
+#### Theme Colors
+- **Primary Color**: Main theme color
+- **Accent Color**: Highlight color
+- **Link Color**: Hyperlink color
 
 ### Widget Areas
-
-1. **Sidebar** (ID: `sidebar-1`): Main sidebar widget area
-2. **Footer** (ID: `footer-1`): Footer widget area
+- **Primary Sidebar**: Main sidebar widgets
+- **Footer Widget Area 1**: Footer column 1
+- **Footer Widget Area 2**: Footer column 2
+- **Footer Widget Area 3**: Footer column 3
 
 ### Navigation Menus
+- **Primary Menu**: Main navigation
+- **Footer Menu**: Footer navigation
+- **Social Links Menu**: Social media links
 
-1. **Primary Menu** (`primary`): Main navigation menu
-2. **Footer Menu** (`footer`): Footer navigation menu
+### Custom Image Sizes
+The theme registers three custom image sizes:
+- `opencode-featured`: 1200x600 (featured images)
+- `opencode-thumbnail`: 400x300 (post thumbnails)
+- `opencode-square`: 300x300 (square images)
 
-### Hooks and Filters
+## Developer Notes
 
+### Hooks & Filters
+
+#### Actions
+- `opencode_theme_setup`: Theme initialization
+- `opencode_theme_widgets_init`: Widget registration
+- `opencode_theme_scripts`: Script/style enqueueing
+
+#### Filters
+- `opencode_theme_content_width`: Modify content width
+- `opencode_theme_excerpt_length`: Customize excerpt length
+- `opencode_theme_excerpt_more`: Customize excerpt "read more" text
+- `body_class`: Add custom body classes
+
+### Child Theme Support
+
+All functions are pluggable (wrapped in `if (!function_exists())`), making the theme fully compatible with child themes.
+
+Example child theme `functions.php`:
 ```php
-// Content width filter
-add_filter( 'opencode_theme_content_width', function( $width ) {
-    return 1200;
-} );
-
-// Enqueue additional scripts
-add_action( 'wp_enqueue_scripts', 'my_custom_scripts' );
-```
-
-## Development
-
-### Requirements
-
-- Node.js 14+
-- npm or yarn
-- WordPress 5.8+
-
-### Setup
-
-```bash
-# Navigate to theme directory
-cd wp-content/themes/opencode-theme-example
-
-# Install dependencies (if using build tools)
-npm install
-
-# Watch for changes
-npm run watch
-
-# Build for production
-npm run build
-```
-
-### CSS Architecture
-
-The theme uses CSS custom properties for theming:
-
-```css
-:root {
-    --color-primary: #0073aa;
-    --color-secondary: #23282d;
-    --color-accent: #00a0d2;
-    --color-text: #32373c;
-    --color-background: #fff;
-    --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --max-width: 1200px;
+<?php
+// Override parent theme function
+function opencode_theme_excerpt_length($length) {
+    return 30; // Custom excerpt length
 }
 ```
 
-### JavaScript
+### Template Hierarchy
 
-Theme JavaScript follows the revealing module pattern:
+The theme follows WordPress Template Hierarchy:
+- `singular.php` for single posts/pages
+- `archive.php` for archive pages
+- `author.php` for author archives
+- `search.php` for search results
+- `404.php` for 404 errors
 
-```javascript
-(function() {
-    'use strict';
-    
-    // Private functions
-    function privateFunction() {
-        // ...
-    }
-    
-    // Public API
-    window.OpencodeTheme = {
-        init: function() {
-            // Initialize
-        }
-    };
-})();
-```
+### Performance Optimizations
 
-## Child Theme
+1. **Lazy Loading**: Native lazy loading enabled
+2. **Emoji Removal**: Emoji scripts/styles removed
+3. **Asset Preloading**: Critical CSS preloaded
+4. **Limited Revisions**: Post revisions limited to 3
+5. **Minified Assets**: CSS/JS properly minified
 
-To create a child theme:
+### Accessibility Features
 
-```php
-<?php
-// style.css
-/*
- Theme Name:   Opencode Child
- Template:     opencode-theme-example
-*/
-
-// functions.php
-<?php
-add_action( 'wp_enqueue_scripts', 'child_theme_styles' );
-function child_theme_styles() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-}
-```
-
-## Coding Standards
-
-This theme follows:
-
-- WordPress Coding Standards for PHP
-- WordPress HTML Coding Standards
-- WordPress CSS Coding Standards
-- WordPress JavaScript Coding Standards
+1. **Skip Links**: Skip to content link
+2. **ARIA Labels**: Proper ARIA attributes
+3. **Focus Management**: Visible focus indicators
+4. **Screen Reader Text**: `.screen-reader-text` class
+5. **Keyboard Navigation**: Full keyboard support
+6. **Color Contrast**: WCAG 2.1 AA compliant
 
 ## Browser Support
 
-- Chrome (last 2 versions)
-- Firefox (last 2 versions)
-- Safari (last 2 versions)
-- Edge (last 2 versions)
-- IE 11 (graceful degradation)
-
-## Security
-
-- All data is properly escaped using WordPress functions
-- Nonce verification for forms
-- Proper capability checks
-- No direct database queries
-
-## Performance
-
-- Minimal HTTP requests
-- Optimized images with lazy loading
-- No jQuery dependency
-- CSS critical path optimized
-- Asynchronous JavaScript loading
-
-## Accessibility
-
-- Skip link to main content
-- Proper heading hierarchy
-- ARIA labels for interactive elements
-- Keyboard navigation support
-- Focus management
-- Screen reader text for icons
-- Color contrast compliance
-
-## Internationalization
-
-The theme is translation-ready:
-
-```php
-// Load text domain
-load_theme_textdomain( 'opencode-theme-example', get_template_directory() . '/languages' );
-
-// Usage
-esc_html__( 'Text', 'opencode-theme-example' );
-esc_html_e( 'Text', 'opencode-theme-example' );
-printf( esc_html__( 'Text with %s', 'opencode-theme-example' ), $variable );
-```
-
-## Testing
-
-Test with:
-
-- Theme Check plugin
-- WordPress Theme Unit Test Data
-- Debug Bar
-- Query Monitor
-- WAVE Accessibility Tool
-- BrowserStack for cross-browser testing
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Opera (latest)
+- IE 11 (degraded experience)
 
 ## Credits
 
-- Built with WordPress best practices
-- Inspired by WordPress core themes
-- CSS Grid and Flexbox layouts
-- Accessibility guidelines from WCAG 2.0
+- **WordPress**: [wordpress.org](https://wordpress.org/)
+- **Normalize.css**: [necolas.github.io/normalize.css/](https://necolas.github.io/normalize.css/)
+- **Font Awesome**: Optional for icons
 
 ## License
 
-GPL v2 or later
+OpenCode Theme Example is licensed under the GNU General Public License v2.0 or later.
 
 ## Changelog
 
 ### 1.0.0
 - Initial release
-- Responsive layout
-- Accessibility features
-- Widget areas
-- Custom menu support
-- Custom logo support
-- Block editor support
+- Responsive design with CSS Grid
+- Customizer integration
+- Accessibility compliance
+- Performance optimizations
+- WooCommerce basic support
+- Full i18n support
+
+## Support
+
+For support, please open an issue on GitHub or contact the theme author.
+
+## Contributing
+
+Contributions are welcome! Please read the contributing guidelines before submitting a pull request.
+
+---
+
+Built with ❤️ by OpenCode following WordPress best practices.

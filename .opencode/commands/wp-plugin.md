@@ -6,6 +6,14 @@ Start a comprehensive WordPress plugin development workflow with security, perfo
 
 $ARGUMENTS
 
+## Output Directory
+
+**IMPORTANT**: All plugin files MUST be saved in the `wp-content/plugins/` directory relative to the WordPress project root.
+
+- Create the plugin directory at: `wp-content/plugins/{plugin-name}/`
+- All plugin files (main PHP file, includes/, admin/, etc.) go inside this directory
+- Do NOT save files in any other location (examples/, current directory, etc.)
+
 ## Process
 
 Follow these steps for plugin development:

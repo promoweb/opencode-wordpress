@@ -1,0 +1,310 @@
+/*--------------------------------------------------------------
+>>> RESPONSIVE ENHANCEMENTS
+----------------------------------------------------------------
+# Enhanced Mobile Navigation
+# Grid Layout Improvements
+# Author Archive Styles
+# Search Form Styles
+# Pagination Improvements
+# Widget Enhancements
+# Performance Optimizations
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Enhanced Mobile Navigation
+--------------------------------------------------------------*/
+.main-navigation {
+    position: relative;
+}
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+}
+
+.main-navigation.toggled ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-primary);
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-navigation.toggled li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-navigation.toggled li:last-child {
+    border-bottom: none;
+}
+
+/*--------------------------------------------------------------
+# Grid Layout Improvements
+--------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+    .site-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .has-sidebar .site-main {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .has-sidebar.left .site-main {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .has-sidebar.none .site-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    .site-branding {
+        text-align: left;
+        padding: 0;
+        margin-right: 2rem;
+    }
+
+    .main-navigation {
+        flex: 1;
+    }
+}
+
+/*--------------------------------------------------------------
+# Author Archive Styles
+--------------------------------------------------------------*/
+.author-header {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.author-info {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.author-avatar img {
+    border-radius: 50%;
+}
+
+.author-details {
+    flex: 1;
+}
+
+.author-title {
+    margin-bottom: 0.5rem;
+}
+
+.author-description {
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 767px) {
+    .author-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/*--------------------------------------------------------------
+# Search Form Styles
+--------------------------------------------------------------*/
+.search-form {
+    display: flex;
+    max-width: 100%;
+}
+
+.search-form label {
+    flex: 1;
+    margin-right: 0.5rem;
+}
+
+.search-form .search-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-form .search-submit {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form .search-submit:hover,
+.search-form .search-submit:focus {
+    background-color: var(--color-accent);
+}
+
+/*--------------------------------------------------------------
+# Pagination Improvements
+--------------------------------------------------------------*/
+.navigation.pagination {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a,
+.nav-links span {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
+
+.nav-links .current {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
+
+/*--------------------------------------------------------------
+# Widget Enhancements
+--------------------------------------------------------------*/
+.widget-area {
+    padding: 0;
+    background-color: transparent;
+}
+
+.widget {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.widget:last-child {
+    margin-bottom: 0;
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.widget ul li:last-child {
+    border-bottom: none;
+}
+
+.widget ul li a {
+    color: var(--color-text);
+    transition: color 0.3s ease;
+}
+
+.widget ul li a:hover {
+    color: var(--color-primary);
+}
+
+/*--------------------------------------------------------------
+# Performance Optimizations
+--------------------------------------------------------------*/
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+img[loading] {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+img:not([src]) {
+    visibility: hidden;
+}
+
+/* Reduce layout shifts */
+.entry-content img {
+    height: auto;
+}
+
+/* Print styles */
+@media print {
+    .main-navigation,
+    .widget-area,
+    .site-footer {
+        display: none;
+    }
+
+    .site-main {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/*--------------------------------------------------------------
+# Footer Widget Areas
+--------------------------------------------------------------*/
+.footer-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 1rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.footer-widgets .widget {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ccc;
+}
+
+.footer-widgets .widget-title {
+    color: #fff;
+}
+
+.footer-widgets .widget a {
+    color: #fff;
+}
+
+.footer-widgets .widget a:hover {
+    color: var(--color-accent);
+}

@@ -6,6 +6,14 @@ Start a comprehensive WordPress theme development workflow with validation and b
 
 $ARGUMENTS
 
+## Output Directory
+
+**IMPORTANT**: All theme files MUST be saved in the `wp-content/themes/` directory relative to the WordPress project root.
+
+- Create the theme directory at: `wp-content/themes/{theme-name}/`
+- All theme files (style.css, index.php, functions.php, etc.) go inside this directory
+- Do NOT save files in any other location (examples/, current directory, etc.)
+
 ## Process
 
 Follow these steps for theme development:

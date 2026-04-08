@@ -6,6 +6,14 @@ Comprehensive WooCommerce extension development and review workflow.
 
 $ARGUMENTS
 
+## Output Directory
+
+**IMPORTANT**: All WooCommerce extension files MUST be saved in the `wp-content/plugins/` directory relative to the WordPress project root.
+
+- Create the plugin directory at: `wp-content/plugins/{plugin-name}/`
+- WooCommerce extensions are plugins and follow the same directory structure
+- Do NOT save files in any other location (examples/, current directory, etc.)
+
 ## WooCommerce Context Check
 
 Before proceeding, verify:
