@@ -467,6 +467,42 @@ chmod -R 755 ~/.config/opencode/hooks
 chmod 644 ~/.config/opencode/.opencode/commands/*.md
 ```
 
+#### Configuration Invalid: Bad File Reference
+
+If you see an error like:
+
+```
+Configuration is invalid: bad file reference: "{file:.opencode/prompts/agents/wordpress-reviewer.txt}"
+/home/user/.opencode/.opencode/prompts/agents/wordpress-reviewer.txt does not exist
+```
+
+This means the `opencode.json` file contains paths with the `.opencode/` prefix that create a double path after installation.
+
+**Quick Fix:**
+
+```bash
+# Fix the paths in the installed opencode.json
+sed -i 's|{file:\.opencode/|{file:|g' ~/.opencode/opencode.json
+
+# Verify the fix
+grep "{file:" ~/.opencode/opencode.json
+```
+
+**Expected output (paths without `.opencode/` prefix):**
+
+```
+"prompt": "{file:prompts/agents/wordpress-reviewer.txt}"
+"template": "{file:commands/wp-theme.md}"
+```
+
+**Verify files exist:**
+
+```bash
+# Check that referenced files exist
+ls -la ~/.opencode/prompts/agents/
+ls -la ~/.opencode/commands/
+```
+
 ### Debug Mode
 
 Enable debug mode for troubleshooting:

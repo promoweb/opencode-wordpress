@@ -19,7 +19,7 @@
       "description": "Expert WordPress code reviewer specializing in WPCS, security vulnerabilities, performance issues, hooks usage, and best practices. Use after writing or modifying WordPress code.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-5",
-      "prompt": "{file:.opencode/prompts/agents/wordpress-reviewer.txt}",
+      "prompt": "{file:prompts/agents/wordpress-reviewer.txt}",
       "tools": {
         "read": true,
         "bash": true,
@@ -31,7 +31,7 @@
       "description": "WordPress build and debug error resolution specialist. Fixes PHP errors, WordPress deprecation notices, plugin conflicts, database errors, and WooCommerce issues.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-5",
-      "prompt": "{file:.opencode/prompts/agents/wordpress-build-resolver.txt}",
+      "prompt": "{file:prompts/agents/wordpress-build-resolver.txt}",
       "tools": {
         "read": true,
         "write": true,
@@ -43,7 +43,7 @@
       "description": "WordPress theme specialist reviewer. Reviews theme hierarchy, Customizer, widgets, accessibility, performance, and child theme compatibility.",
       "mode": "subagent",
       "model": "anthropic/claude-sonnet-4-5",
-      "prompt": "{file:.opencode/prompts/agents/theme-reviewer.txt}",
+      "prompt": "{file:prompts/agents/theme-reviewer.txt}",
       "tools": {
         "read": true,
         "bash": true,
@@ -55,7 +55,7 @@
       "description": "WordPress plugin specialist reviewer. Reviews plugin structure, hooks, Settings API, custom post types, database operations, and security.",
       "mode": "subagent",
       "model": "anthropic/claude-sonnet-4-5",
-      "prompt": "{file:.opencode/prompts/agents/plugin-reviewer.txt}",
+      "prompt": "{file:prompts/agents/plugin-reviewer.txt}",
       "tools": {
         "read": true,
         "bash": true,
@@ -67,31 +67,31 @@
   "command": {
     "wp-theme": {
       "description": "Start WordPress theme development workflow with hierarchy validation, Customizer setup, and accessibility checks",
-      "template": "{file:.opencode/commands/wp-theme.md}\n\n$ARGUMENTS",
+      "template": "{file:commands/wp-theme.md}\n\n$ARGUMENTS",
       "agent": "theme-reviewer",
       "subtask": true
     },
     "wp-plugin": {
       "description": "Start WordPress plugin development workflow with structure setup, hooks registration, and security implementation",
-      "template": "{file:.opencode/commands/wp-plugin.md}\n\n$ARGUMENTS",
+      "template": "{file:commands/wp-plugin.md}\n\n$ARGUMENTS",
       "agent": "plugin-reviewer",
       "subtask": true
     },
     "wp-review": {
       "description": "Comprehensive WordPress code review for security, performance, coding standards, and best practices",
-      "template": "{file:.opencode/commands/wp-review.md}\n\n$ARGUMENTS",
+      "template": "{file:commands/wp-review.md}\n\n$ARGUMENTS",
       "agent": "wordpress-reviewer",
       "subtask": true
     },
     "wp-build-fix": {
       "description": "Fix WordPress build errors, runtime errors, deprecation notices, and debugging issues",
-      "template": "{file:.opencode/commands/wp-build-fix.md}\n\n$ARGUMENTS",
+      "template": "{file:commands/wp-build-fix.md}\n\n$ARGUMENTS",
       "agent": "wordpress-build-resolver",
       "subtask": true
     },
     "wc-build": {
       "description": "WooCommerce-specific development workflow for products, orders, cart, payment gateways, and shipping methods",
-      "template": "{file:.opencode/commands/wc-build.md}\n\n$ARGUMENTS",
+      "template": "{file:commands/wc-build.md}\n\n$ARGUMENTS",
       "agent": "wordpress-reviewer",
       "subtask": true
     }

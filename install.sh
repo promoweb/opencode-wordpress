@@ -166,10 +166,51 @@ case "$INSTALL_MODE" in
         ;;
 esac
 
+# Function to verify installation
+verify_installation() {
+    echo -e "${BLUE}Verifying installation...${NC}"
+    
+    ERRORS=0
+    
+    # Check required directories
+    for dir in skills agents rules prompts/agents commands instructions; do
+        if [ ! -d "$OPENCODE_CONFIG_DIR/$dir" ]; then
+            echo -e "${YELLOW}Warning: Directory $dir not found${NC}"
+            ERRORS=$((ERRORS + 1))
+        fi
+    done
+    
+    # Check required files
+    for file in opencode.json prompts/agents/wordpress-reviewer.txt commands/wp-theme.md; do
+        if [ ! -f "$OPENCODE_CONFIG_DIR/$file" ]; then
+            echo -e "${YELLOW}Warning: File $file not found${NC}"
+            ERRORS=$((ERRORS + 1))
+        fi
+    done
+    
+    # Check for old incorrect paths in opencode.json
+    if grep -q '{file:.opencode/' "$OPENCODE_CONFIG_DIR/opencode.json" 2>/dev/null; then
+        echo -e "${YELLOW}Warning: Found old paths with .opencode/ prefix in opencode.json${NC}"
+        echo "  Run: sed -i 's|{file:.opencode/|{file:|g' $OPENCODE_CONFIG_DIR/opencode.json"
+        ERRORS=$((ERRORS + 1))
+    fi
+    
+    if [ $ERRORS -eq 0 ]; then
+        echo -e "${GREEN}✓ Installation verified successfully${NC}"
+    else
+        echo -e "${YELLOW}Found $ERRORS issues. Please review the warnings above.${NC}"
+    fi
+    echo ""
+}
+
 echo "================================"
 echo -e "${GREEN}Installation Complete!${NC}"
 echo "================================"
 echo ""
+
+# Verify installation
+verify_installation
+
 echo "Next steps:"
 echo "1. Restart OpenCode CLI"
 echo "2. Try a command: opencode /wp-theme 'Create a theme'"
