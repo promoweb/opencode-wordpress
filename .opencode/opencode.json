@@ -1,7 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "anthropic/claude-sonnet-4-5",
-  "small_model": "anthropic/claude-haiku-4-5",
   "default_agent": "build",
   "instructions": [
     "skills/wordpress-theme-development/SKILL.md",
@@ -18,7 +16,6 @@
     "wordpress-reviewer": {
       "description": "Expert WordPress code reviewer specializing in WPCS, security vulnerabilities, performance issues, hooks usage, and best practices. Use after writing or modifying WordPress code.",
       "mode": "subagent",
-      "model": "anthropic/claude-opus-4-5",
       "prompt": "{file:prompts/agents/wordpress-reviewer.txt}",
       "tools": {
         "read": true,
@@ -30,7 +27,6 @@
     "wordpress-build-resolver": {
       "description": "WordPress build and debug error resolution specialist. Fixes PHP errors, WordPress deprecation notices, plugin conflicts, database errors, and WooCommerce issues.",
       "mode": "subagent",
-      "model": "anthropic/claude-opus-4-5",
       "prompt": "{file:prompts/agents/wordpress-build-resolver.txt}",
       "tools": {
         "read": true,
@@ -42,7 +38,6 @@
     "theme-reviewer": {
       "description": "WordPress theme specialist reviewer. Reviews theme hierarchy, Customizer, widgets, accessibility, performance, and child theme compatibility.",
       "mode": "subagent",
-      "model": "anthropic/claude-sonnet-4-5",
       "prompt": "{file:prompts/agents/theme-reviewer.txt}",
       "tools": {
         "read": true,
@@ -54,7 +49,6 @@
     "plugin-reviewer": {
       "description": "WordPress plugin specialist reviewer. Reviews plugin structure, hooks, Settings API, custom post types, database operations, and security.",
       "mode": "subagent",
-      "model": "anthropic/claude-sonnet-4-5",
       "prompt": "{file:prompts/agents/plugin-reviewer.txt}",
       "tools": {
         "read": true,
