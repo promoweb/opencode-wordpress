@@ -227,23 +227,6 @@ if (!defined('WP_POST_REVISIONS')) {
 }
 
 /**
- * Add body classes for sidebar position
- */
-function opencode_theme_body_classes($classes) {
-    $sidebar_position = get_theme_mod('sidebar_position', 'right');
-
-    if (is_active_sidebar('sidebar-1')) {
-        $classes[] = 'has-sidebar';
-        $classes[] = 'has-sidebar-' . $sidebar_position;
-    } else {
-        $classes[] = 'no-sidebar';
-    }
-
-    return $classes;
-}
-add_filter('body_class', 'opencode_theme_body_classes');
-
-/**
  * Modify excerpt length
  */
 function opencode_theme_excerpt_length($length) {
@@ -251,14 +234,4 @@ function opencode_theme_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'opencode_theme_excerpt_length');
 
-/**
- * Modify excerpt more
- */
-function opencode_theme_excerpt_more($more) {
-    return '... <a href="' . esc_url(get_permalink()) . '" class="read-more">' . sprintf(
-        /* translators: %s: Post title */
-        __('Continue reading %s', 'opencode-theme-example'),
-        '<span class="screen-reader-text">' . esc_html(get_the_title()) . '</span>'
-    ) . '</a>';
-}
-add_filter('excerpt_more', 'opencode_theme_excerpt_more');
+
