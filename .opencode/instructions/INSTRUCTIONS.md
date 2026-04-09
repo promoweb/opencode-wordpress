@@ -6,12 +6,16 @@ This configuration provides comprehensive WordPress development support through 
 
 ### WordPress Development
 - `/wp-theme` - Theme development workflow
+- `/wp-theme-orchestrate` - **NEW** Complete theme orchestration with 5-phase workflow
 - `/wp-plugin` - Plugin development workflow
 - `/wp-review` - Comprehensive code review
 - `/wp-build-fix` - Debug and error resolution
 - `/wc-build` - WooCommerce development workflow
 
 ## Available Agents
+
+### Theme Creation
+- `theme-orchestrator` - **NEW** Creates complete production-ready themes from specifications and screenshots
 
 ### Code Review
 - `wordpress-reviewer` - Full WordPress code review (security, performance, standards)
@@ -59,6 +63,17 @@ Automated checks on file operations:
 - `security-check.js` - Security vulnerability scanning
 
 ## Quick Start
+
+### Theme Orchestration (NEW)
+Create complete themes from specifications and screenshots:
+```
+/wp-theme-orchestrate "Create a modern business theme with dark mode support"
+```
+
+With input files in `plans/input/`:
+```
+/wp-theme-orchestrate "Create a portfolio theme based on my specifications"
+```
 
 ### Theme Development
 ```

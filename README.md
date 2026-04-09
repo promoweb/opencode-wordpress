@@ -13,10 +13,11 @@ A comprehensive toolkit for WordPress developers using OpenCode. This repository
 This repository provides a comprehensive OpenCode configuration for WordPress development:
 
 - **8 Skills**: WordPress theme, plugin, WooCommerce, security, REST API, testing, hooks/filters, database
-- **4 Agents**: WordPress reviewer, build resolver, theme reviewer, plugin reviewer
+- **5 Agents**: WordPress reviewer, build resolver, theme reviewer, plugin reviewer, **theme orchestrator (NEW)**
 - **6 Rules**: WordPress coding standards, hooks, patterns, security, testing, database
-- **5 Commands**: `/wp-theme`, `/wp-plugin`, `/wp-review`, `/wp-build-fix`, `/wc-build`
+- **6 Commands**: `/wp-theme`, `/wp-theme-orchestrate (NEW)`, `/wp-plugin`, `/wp-review`, `/wp-build-fix`, `/wc-build`
 - **3 Hooks**: PHP lint, WP debug check, security check
+- **NEW**: Complete theme orchestration workflow with screenshot analysis and WooCommerce support
 
 ## Installation
 
@@ -99,14 +100,21 @@ opencode-wordpress/
 
 ## Agents
 
+### Theme Creation
+- **theme-orchestrator** (NEW): Creates complete production-ready themes from specifications, screenshots, and user descriptions with 5-phase workflow
+
+### Code Review
 - **wordpress-reviewer**: Comprehensive WordPress code review (WPCS, hooks, security, performance)
-- **wordpress-build-resolver**: Build/debug error resolution (PHP errors, deprecation notices, conflicts)
 - **theme-reviewer**: Theme-specific review (hierarchy, templates, Customizer, accessibility)
 - **plugin-reviewer**: Plugin-specific review (structure, hooks, Settings API, database)
+
+### Debugging
+- **wordpress-build-resolver**: Build/debug error resolution (PHP errors, deprecation notices, conflicts)
 
 ## Commands
 
 - `/wp-theme`: Start theme development workflow
+- `/wp-theme-orchestrate` (NEW): Complete theme orchestration with 5-phase workflow (Configuration, Design, Demo Content, Finalization, WooCommerce)
 - `/wp-plugin`: Start plugin development workflow
 - `/wp-review`: Comprehensive WordPress code review
 - `/wp-build-fix`: Fix WordPress build/debug errors
@@ -124,6 +132,20 @@ WordPress-specific rules extend common rules:
 - **database**: wpdb usage, prepare statements, Options API, query optimization
 
 ## Usage Examples
+
+### Theme Orchestration (NEW)
+
+Create complete themes from specifications and screenshots:
+
+```bash
+# Basic usage with description
+opencode /wp-theme-orchestrate "Create a modern business theme with dark mode support"
+
+# With input files (place in plans/input/)
+opencode /wp-theme-orchestrate "Create a portfolio theme based on my specifications"
+```
+
+See [THEME-ORCHESTRATION.md](docs/THEME-ORCHESTRATION.md) for detailed workflow documentation.
 
 ### Theme Development
 
@@ -160,6 +182,7 @@ opencode /wp-build-fix "Fix PHP deprecation notices in my-plugin"
 - [INSTALLATION.md](docs/INSTALLATION.md) - Detailed installation guide
 - [USAGE.md](docs/USAGE.md) - Usage examples and best practices
 - [MIGRATION.md](docs/MIGRATION.md) - Migration from manual WordPress development
+- [THEME-ORCHESTRATION.md](docs/THEME-ORCHESTRATION.md) - **NEW** Complete theme orchestration workflow guide
 
 ## Contributing
 

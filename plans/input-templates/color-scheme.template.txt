@@ -1,0 +1,43 @@
+# Color Scheme Template
+
+## Primary Colors
+Primary: #0073aa
+Primary Dark: #005a87
+Primary Light: #00a0d2
+
+## Secondary Colors
+Secondary: #23282d
+Secondary Dark: #191e23
+Secondary Light: #32373c
+
+## Accent Colors
+Accent: #00a0d2
+Accent Dark: #0073aa
+Accent Light: #33b3db
+
+## Background Colors
+Background: #ffffff
+Background Alt: #f7f7f7
+Background Dark: #eee
+
+## Text Colors
+Text: #333333
+Text Light: #666666
+Text Dark: #1e1e1e
+
+## Border Colors
+Border: #ddd
+Border Light: #eee
+Border Dark: #ccc
+
+## Status Colors
+Success: #46b450
+Warning: #ffb900
+Error: #dc3232
+Info: #00a0d2
+
+## Notes
+- Use hex color codes (#RRGGBB)
+- Provide dark/light variants for flexibility
+- Ensure text colors have sufficient contrast with backgrounds
+- Status colors follow WordPress conventions

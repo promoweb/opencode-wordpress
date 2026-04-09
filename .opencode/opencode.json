@@ -56,6 +56,17 @@
         "write": false,
         "edit": false
       }
+    },
+    "theme-orchestrator": {
+      "description": "WordPress theme orchestration specialist. Creates complete production-ready themes from specifications, screenshots, and user descriptions with full 5-phase workflow including optional WooCommerce integration.",
+      "mode": "subagent",
+      "prompt": "{file:prompts/agents/theme-orchestrator.txt}",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
     }
   },
   "command": {
@@ -87,6 +98,12 @@
       "description": "WooCommerce-specific development workflow for products, orders, cart, payment gateways, and shipping methods",
       "template": "{file:commands/wc-build.md}\n\n$ARGUMENTS",
       "agent": "wordpress-reviewer",
+      "subtask": true
+    },
+    "wp-theme-orchestrate": {
+      "description": "Complete WordPress theme orchestration workflow. Creates production-ready themes from specifications, screenshots, and user descriptions through 5 phases: Configuration, Design, Demo Content, Finalization, and optional WooCommerce integration.",
+      "template": "{file:commands/wp-theme-orchestrate.md}\n\n$ARGUMENTS",
+      "agent": "theme-orchestrator",
       "subtask": true
     }
   }

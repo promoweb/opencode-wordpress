@@ -751,11 +751,427 @@ define('WP_POST_REVISIONS', 3);
 - Cache expensive operations
 - Use transients for temporary data
 
+## Theme Orchestration Workflow
+
+The orchestration workflow enables automated theme generation from user specifications and design references.
+
+### Workflow Phases
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│ Theme Orchestration Workflow                                             │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│ Phase 0: Preliminary                                                     │
+│   ├── Collect project description from user                              │
+│   ├── Import .txt files (theme-spec, site-config, custom-post-types)    │
+│   └── Analyze screenshot images for design extraction                    │
+│                                                                          │
+│ Phase 1: Configuration & Structure                                       │
+│   ├── Create theme directory structure                                   │
+│   ├── Generate style.css with metadata                                   │
+│   ├── Set up functions.php with required includes                        │
+│   └── Register custom post types (if specified)                          │
+│                                                                          │
+│ Phase 2: Design & Layout Development                                     │
+│   ├── Generate header.php and footer.php                                 │
+│   ├── Create index.php and singular.php templates                        │
+│   ├── Build archive and single templates                                 │
+│   ├── Implement responsive CSS with media queries                         │
+│   └── Create template parts for reusable components                      │
+│                                                                          │
+│ Phase 3: Demo Content Implementation                                      │
+│   ├── Create homepage template with sections                             │
+│   ├── Generate sample page content                                       │
+│   ├── Create sample post with featured image                             │
+│   └── Set up navigation menus and widgets                                │
+│                                                                          │
+│ Phase 4: Finalization & Testing                                          │
+│   ├── Validate code integrity                                            │
+│   ├── Remove all placeholder content                                     │
+│   ├── Test theme functionality                                           │
+│   └── Generate installation instructions                                  │
+│                                                                          │
+│ Phase 5: WooCommerce Integration (Optional)                              │
+│   ├── Add WooCommerce theme support                                      │
+│   ├── Create WooCommerce templates                                       │
+│   ├── Generate sample products                                           │
+│   └── Test shop functionality                                            │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+### Screenshot Analysis Patterns
+
+When analyzing design screenshots, extract the following information:
+
+```php
+/**
+ * Design Extraction from Screenshots
+ * 
+ * Analyze reference images to extract:
+ * 
+ * 1. Color Palette
+ *    - Primary color (main brand color)
+ *    - Secondary color (accent color)
+ *    - Background colors (light/dark variants)
+ *    - Text colors (headings, body, muted)
+ *    - Border and divider colors
+ * 
+ * 2. Typography
+ *    - Heading font family
+ *    - Body font family
+ *    - Font sizes (h1-h6, body, small)
+ *    - Font weights (regular, medium, bold)
+ *    - Line heights and letter spacing
+ * 
+ * 3. Layout Structure
+ *    - Header layout (logo position, navigation style)
+ *    - Content width and sidebar position
+ *    - Footer columns and widget areas
+ *    - Spacing patterns (margins, padding)
+ * 
+ * 4. Component Styles
+ *    - Button styles (primary, secondary, outline)
+ *    - Card styles (shadows, borders, radius)
+ *    - Form input styles
+ *    - Navigation menu styles
+ * 
+ * 5. Responsive Breakpoints
+ *    - Mobile layout changes
+ *    - Tablet adjustments
+ *    - Desktop variations
+ */
+```
+
+### Demo Content Generation Patterns
+
+```php
+<?php
+/**
+ * Demo Content Generation
+ * 
+ * Patterns for creating realistic demo content.
+ */
+
+/**
+ * Homepage Sections
+ */
+function theme_generate_homepage_sections(): array {
+    return [
+        'hero' => [
+            'type' => 'hero',
+            'title' => 'Welcome to Our Website',
+            'subtitle' => 'Discover amazing features and services',
+            'button_text' => 'Get Started',
+            'button_link' => '#',
+            'background' => 'hero-bg.jpg',
+        ],
+        'features' => [
+            'type' => 'features',
+            'title' => 'Our Features',
+            'columns' => 3,
+            'items' => [
+                ['icon' => 'dashicons-admin-users', 'title' => 'Feature One', 'description' => 'Description here'],
+                ['icon' => 'dashicons-admin-settings', 'title' => 'Feature Two', 'description' => 'Description here'],
+                ['icon' => 'dashicons-admin-appearance', 'title' => 'Feature Three', 'description' => 'Description here'],
+            ],
+        ],
+        'cta' => [
+            'type' => 'call-to-action',
+            'title' => 'Ready to Get Started?',
+            'button_text' => 'Contact Us',
+            'button_link' => '/contact',
+        ],
+    ];
+}
+
+/**
+ * Sample Page Content
+ */
+function theme_generate_sample_page(): array {
+    return [
+        'title' => 'About Us',
+        'slug' => 'about',
+        'content' => '
+            <!-- wp:heading {"level":2} -->
+            <h2>Our Story</h2>
+            <!-- /wp:heading -->
+            
+            <!-- wp:paragraph -->
+            <p>This is a sample page demonstrating the theme capabilities. Replace this content with your actual page content.</p>
+            <!-- /wp:paragraph -->
+            
+            <!-- wp:columns -->
+            <div class="wp-block-columns">
+                <!-- wp:column -->
+                <div class="wp-block-column">
+                    <!-- wp:heading {"level":3} -->
+                    <h3>Our Mission</h3>
+                    <!-- /wp:heading -->
+                    <!-- wp:paragraph -->
+                    <p>Mission statement goes here.</p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:column -->
+                
+                <!-- wp:column -->
+                <div class="wp-block-column">
+                    <!-- wp:heading {"level":3} -->
+                    <h3>Our Vision</h3>
+                    <!-- /wp:heading -->
+                    <!-- wp:paragraph -->
+                    <p>Vision statement goes here.</p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:column -->
+            </div>
+            <!-- /wp:columns -->
+        ',
+    ];
+}
+
+/**
+ * Sample Post Content
+ */
+function theme_generate_sample_post(): array {
+    return [
+        'title' => 'Hello World! Welcome to Our Site',
+        'slug' => 'hello-world',
+        'content' => '
+            <!-- wp:paragraph -->
+            <p>This is your first post. It demonstrates the theme blog capabilities including:</p>
+            <!-- /wp:paragraph -->
+            
+            <!-- wp:list -->
+            <ul>
+                <li>Featured image display</li>
+                <li>Post meta information</li>
+                <li>Content formatting</li>
+                <li>Comments integration</li>
+            </ul>
+            <!-- /wp:list -->
+            
+            <!-- wp:quote -->
+            <blockquote class="wp-block-quote"><p>A great theme makes content shine.</p></blockquote>
+            <!-- /wp:quote -->
+        ',
+        'categories' => ['News'],
+        'tags' => ['welcome', 'first-post'],
+        'featured_image' => 'sample-featured.jpg',
+    ];
+}
+```
+
+### Custom Post Type Registration Pattern
+
+```php
+<?php
+/**
+ * Custom Post Type Registration
+ * 
+ * Pattern for registering CPTs from user specifications.
+ */
+
+class Theme_Custom_Post_Types {
+    
+    private static $instance = null;
+    private $post_types = [];
+    
+    public static function get_instance(): self {
+        if (null === self::$instance) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+    
+    public function register(string $slug, array $args): void {
+        $this->post_types[$slug] = $args;
+    }
+    
+    public function init(): void {
+        add_action('init', [$this, 'register_post_types']);
+    }
+    
+    public function register_post_types(): void {
+        foreach ($this->post_types as $slug => $args) {
+            $defaults = [
+                'labels' => [
+                    'name' => $args['plural_name'] ?? ucfirst($slug),
+                    'singular_name' => $args['singular_name'] ?? ucfirst($slug),
+                    'add_new' => sprintf('Add New %s', $args['singular_name'] ?? ucfirst($slug)),
+                    'add_new_item' => sprintf('Add New %s', $args['singular_name'] ?? ucfirst($slug)),
+                    'edit_item' => sprintf('Edit %s', $args['singular_name'] ?? ucfirst($slug)),
+                    'view_item' => sprintf('View %s', $args['singular_name'] ?? ucfirst($slug)),
+                    'search_items' => sprintf('Search %s', $args['plural_name'] ?? ucfirst($slug)),
+                ],
+                'public' => true,
+                'has_archive' => true,
+                'publicly_queryable' => true,
+                'query_var' => true,
+                'rewrite' => ['slug' => $slug],
+                'capability_type' => 'post',
+                'hierarchical' => false,
+                'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+                'menu_position' => 5,
+                'menu_icon' => $args['menu_icon'] ?? 'dashicons-admin-post',
+                'show_in_rest' => true,
+                'show_in_menu' => true,
+                'show_in_nav_menus' => true,
+                'show_in_admin_bar' => true,
+            ];
+            
+            register_post_type($slug, wp_parse_args($args, $defaults));
+        }
+    }
+}
+
+// Usage from specification file:
+// $cpt = Theme_Custom_Post_Types::get_instance();
+// $cpt->register('portfolio', [
+//     'singular_name' => 'Portfolio Item',
+//     'plural_name' => 'Portfolio',
+//     'menu_icon' => 'dashicons-portfolio',
+//     'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+// ]);
+// $cpt->init();
+```
+
+### WooCommerce Theme Support Pattern
+
+```php
+<?php
+/**
+ * WooCommerce Theme Support
+ * 
+ * Add WooCommerce support to theme.
+ */
+
+function theme_woocommerce_support(): void {
+    add_theme_support('woocommerce');
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
+}
+
+add_action('after_setup_theme', 'theme_woocommerce_support');
+
+/**
+ * WooCommerce Template Hooks
+ */
+function theme_woocommerce_setup(): void {
+    // Remove default WooCommerce wrappers
+    remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+    remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+    
+    // Add theme wrappers
+    add_action('woocommerce_before_main_content', 'theme_woocommerce_wrapper_start', 10);
+    add_action('woocommerce_after_main_content', 'theme_woocommerce_wrapper_end', 10);
+}
+
+add_action('wp', 'theme_woocommerce_setup');
+
+function theme_woocommerce_wrapper_start(): void {
+    echo '<main id="primary" class="site-main woocommerce-site-main">';
+    echo '<div class="container">';
+}
+
+function theme_woocommerce_wrapper_end(): void {
+    echo '</div>';
+    echo '</main>';
+}
+
+/**
+ * WooCommerce Archive Columns
+ */
+function theme_woocommerce_loop_columns(): int {
+    return 3; // 3 products per row
+}
+
+add_filter('loop_shop_columns', 'theme_woocommerce_loop_columns');
+
+/**
+ * WooCommerce Related Products Columns
+ */
+function theme_related_products_args(array $args): array {
+    $args['columns'] = 3;
+    $args['posts_per_page'] = 3;
+    return $args;
+}
+
+add_filter('woocommerce_related_products_columns', 'theme_related_products_args');
+add_filter('woocommerce_output_related_products_args', 'theme_related_products_args');
+```
+
+### Theme Directory Generation Pattern
+
+```
+theme-name/
+├── style.css                    # Theme metadata + base styles
+├── index.php                    # Required fallback template
+├── functions.php                # Theme setup and includes
+├── screenshot.png               # Theme preview (1200x900)
+├── assets/
+│   ├── css/
+│   │   ├── base.css            # Reset/normalize
+│   │   ├── components.css      # Buttons, cards, forms
+│   │   ├── layout.css          # Grid, containers
+│   │   ├── responsive.css      # Media queries
+│   │   └── woocommerce.css     # WooCommerce styles (if needed)
+│   ├── js/
+│   │   ├── main.js             # Main theme JavaScript
+│   │   └── navigation.js       # Mobile navigation
+│   └── images/
+│       └── logo.png
+├── inc/
+│   ├── setup.php               # Theme setup functions
+│   ├── customizer.php          # Customizer settings
+│   ├── widgets.php             # Widget registration
+│   ├── template-tags.php       # Custom template functions
+│   ├── cpt.php                 # Custom post types
+│   └── woocommerce.php         # WooCommerce integration (if needed)
+├── template-parts/
+│   ├── content.php             # Default content partial
+│   ├── content-page.php        # Page content partial
+│   ├── content-single.php      # Single post partial
+│   ├── content-none.php       # No content found
+│   ├── header/
+│   │   ├── header-main.php     # Main header
+│   │   └── header-mobile.php   # Mobile header
+│   ├── footer/
+│   │   └── footer-main.php     # Main footer
+│   └── components/
+│       ├── hero.php            # Hero section
+│       ├── features.php        # Features section
+│       ├── cta.php             # Call to action
+│       └── testimonials.php    # Testimonials section
+├── templates/
+│   ├── homepage.php            # Homepage template
+│   ├── full-width.php          # Full width template
+│   └── contact.php             # Contact page template
+├── woocommerce/                # WooCommerce templates (if needed)
+│   ├── archive-product.php
+│   ├── single-product.php
+│   └── content-product.php
+├── header.php
+├── footer.php
+├── sidebar.php
+├── singular.php
+├── single.php
+├── page.php
+├── archive.php
+├── search.php
+├── 404.php
+└── languages/
+    └── theme-name.pot          # Translation template
+```
+
 ## Reference
 
 - WordPress Theme Developer Handbook: https://developer.wordpress.org/themes/
 - WordPress Template Hierarchy: https://developer.wordpress.org/themes/basics/template-hierarchy/
 - WordPress Customizer API: https://developer.wordpress.org/themes/customize-api/
 - WordPress Coding Standards: https://developer.wordpress.org/coding-standards/wordpress-coding-standards/
+- WooCommerce Theme Developer Handbook: https://developer.woocommerce.com/themes/
 
 **Remember**: Great themes are organized, secure, accessible, and performant. Follow the hierarchy, use template parts, and keep functions modular.

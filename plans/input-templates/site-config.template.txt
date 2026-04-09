@@ -1,0 +1,40 @@
+# Site Configuration Template
+
+## Site Information
+Site Title: 
+Tagline: 
+Site URL: 
+
+## Homepage Settings
+Show on front: posts|page
+Front page template: default|custom
+
+## Blog Settings
+Posts per page: 
+Excerpt length: 
+Featured image size: 
+
+## Navigation
+Primary Menu Items:
+- Home
+- About
+- Services
+- Blog
+- Contact
+
+Footer Menu Items:
+- Privacy Policy
+- Terms of Service
+- Contact
+
+## Widget Areas
+- Primary Sidebar
+- Footer 1
+- Footer 2
+- Footer 3
+
+## Social Links
+Facebook: 
+Twitter: 
+Instagram: 
+LinkedIn:

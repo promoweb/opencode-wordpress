@@ -1,0 +1,72 @@
+# Custom Post Types Template
+
+## Example: Portfolio
+Post Type Key: portfolio
+Name: Portfolio Items
+Singular Name: Portfolio Item
+Description: Portfolio and project showcase
+Public: true
+Has Archive: true
+Menu Icon: dashicons-art
+Supports:
+- title
+- editor
+- thumbnail
+- excerpt
+- custom-fields
+Taxonomies:
+- portfolio_category (categories)
+- portfolio_tag (tags)
+
+## Example: Testimonials
+Post Type Key: testimonial
+Name: Testimonials
+Singular Name: Testimonial
+Description: Customer testimonials and reviews
+Public: true
+Has Archive: false
+Menu Icon: dashicons-format-quote
+Supports:
+- title
+- editor
+- thumbnail
+
+## Example: Team Members
+Post Type Key: team
+Name: Team Members
+Singular Name: Team Member
+Description: Staff and team member profiles
+Public: true
+Has Archive: false
+Menu Icon: dashicons-groups
+Supports:
+- title
+- editor
+- thumbnail
+- page-attributes
+
+## Example: Events
+Post Type Key: event
+Name: Events
+Singular Name: Event
+Description: Events and calendar items
+Public: true
+Has Archive: true
+Menu Icon: dashicons-calendar
+Supports:
+- title
+- editor
+- thumbnail
+- excerpt
+Taxonomies:
+- event_category
+
+## Notes
+- Post Type Key: Must be unique, lowercase, no spaces (max 20 characters)
+- Name: Plural display name
+- Singular Name: Single item display name
+- Public: Whether visible in admin and frontend
+- Has Archive: Whether to have archive page
+- Menu Icon: WordPress dashicon or custom icon URL
+- Supports: Features the CPT supports
+- Taxonomies: Custom taxonomies to register

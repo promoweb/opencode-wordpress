@@ -1,0 +1,46 @@
+# Theme Specification Template
+
+## Basic Information
+Theme Name: 
+Theme URI: 
+Author: 
+Author URI: 
+Description: 
+Version: 1.0.0
+Requires PHP: 8.0
+Text Domain: 
+
+## Features
+- [ ] Custom Logo
+- [ ] Custom Header
+- [ ] Custom Background
+- [ ] Post Thumbnails
+- [ ] Custom Menus
+- [ ] Widget Areas
+- [ ] WooCommerce Support
+- [ ] Dark Mode
+
+## Color Scheme
+Primary: 
+Secondary: 
+Accent: 
+Background: 
+Text: 
+
+## Typography
+Heading Font: 
+Body Font: 
+Base Font Size: 
+Line Height: 
+
+## Layout
+Content Width: 
+Sidebar Position: left|right|none
+Header Style: standard|centered|minimal
+Footer Columns: 1|2|3|4
+
+## Custom Post Types
+[Define any custom post types needed]
+
+## Additional Requirements
+[Any specific requirements]

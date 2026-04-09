@@ -1,0 +1,39 @@
+# Typography Settings Template
+
+## Fonts
+Heading Font: Inter, -apple-system, BlinkMacSystemFont, sans-serif
+Body Font: Open Sans, -apple-system, BlinkMacSystemFont, sans-serif
+Mono Font: Menlo, Monaco, Consolas, monospace
+
+## Font Sizes
+Base Size: 16px
+Small: 14px
+Large: 18px
+H1: 48px
+H2: 36px
+H3: 28px
+H4: 24px
+H5: 20px
+H6: 18px
+
+## Line Heights
+Body Line Height: 1.6
+Heading Line Height: 1.2
+
+## Font Weights
+Regular: 400
+Medium: 500
+Bold: 700
+Heading: 600
+
+## Letter Spacing
+Body: 0
+Heading: -0.02em
+Buttons: 0.05em
+
+## Notes
+- Use web-safe font stacks as fallbacks
+- Font sizes should scale proportionally
+- Line height improves readability
+- Font weights should be available in chosen fonts
+- Letter spacing can improve typography aesthetics
